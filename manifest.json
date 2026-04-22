@@ -1,0 +1,30 @@
+{
+  "required_api_version": "2",
+  "name": "Gitmoji",
+  "description": "Search and copy gitmojis from Ulauncher",
+  "developer_name": "Renan Luiz Vendramini",
+  "icon": "images/icon.png",
+  "options": {
+    "query_debounce": 0.1
+  },
+  "preferences": [
+    {
+      "id": "gm_kw",
+      "type": "keyword",
+      "name": "Gitmoji",
+      "description": "Search gitmojis",
+      "default_value": "gm"
+    },
+    {
+      "id": "default_action",
+      "type": "select",
+      "name": "Formato copiado",
+      "description": "O que colocar no clipboard ao selecionar um gitmoji",
+      "default_value": "code",
+      "options": [
+        { "value": "code", "text": "Código (ex.: :bug:)" },
+        { "value": "emoji", "text": "Emoji unicode (ex.: 🐛)" }
+      ]
+    }
+  ]
+}
