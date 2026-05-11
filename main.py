@@ -75,7 +75,7 @@ class KeywordQueryEventListener(EventListener):
                     ExtensionResultItem(
                         icon=ICON_PATH,
                         name="No gitmoji found",
-                        description="Try another term or use 'gm all'",
+                        description="Try another search-term or use 'gm all'",
                         on_enter=DoNothingAction(),
                     )
                 ]

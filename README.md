@@ -1,4 +1,4 @@
-# Gitmoji para Ulauncher
+# Gitmoji for Ulauncher
 
 [Ulauncher](https://ulauncher.io/) extension inspired by the workflow [alfred-gitmoji](https://github.com/techouse/alfred-gitmoji): searches **gitmojis** offline (packaged list) and copies either the **code** (`:bug:`) or the **emoji** (`🐛`) onto the clipboard.
 
@@ -72,7 +72,7 @@ Under *Preferences → Extensions → Gitmoji*:
 - Inspiration: [techouse/alfred-gitmoji](https://github.com/techouse/alfred-gitmoji)
 - Data and gitmoji convention: [carloscuesta/gitmoji](https://github.com/carloscuesta/gitmoji)
 - Icon: assets from the gitmoji website ([`packages/website/public/static`](https://github.com/carloscuesta/gitmoji/tree/master/packages/website/public/static))
-- English translation [Duclearc](https://duclearc.com)
+- English translation: [Duclearc](https://duclearc.com)
 
 ## License
 
