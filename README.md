@@ -1,78 +1,79 @@
 # Gitmoji para Ulauncher
 
-Extensão para [Ulauncher](https://ulauncher.io/) inspirada no workflow [alfred-gitmoji](https://github.com/techouse/alfred-gitmoji): busca **gitmojis** offline (lista empacotada) e copia o **código** (`:bug:`) ou o **emoji** (`🐛`) para a área de transferência.
+[Ulauncher](https://ulauncher.io/) extension inspired by the workflow [alfred-gitmoji](https://github.com/techouse/alfred-gitmoji): searches **gitmojis** offline (packaged list) and copies either the **code** (`:bug:`) or the **emoji** (`🐛`) onto the clipboard.
 
-Os dados vêm do repositório oficial [carloscuesta/gitmoji](https://github.com/carloscuesta/gitmoji) (arquivo `data/gitmojis.json`).
+The data is provided by the official [carloscuesta/gitmoji](https://github.com/carloscuesta/gitmoji) repository (file: `data/gitmojis.json`).
 
-## Requisitos
+## Prerequisites
 
-- Ulauncher com **Extension API v2** (veja em *Preferências → Sobre*).
+- Ulauncher with **Extension API v2** (see *Preferences → About*).
 
-## Instalação
+## Instalation
 
-### Pelo repositório Git (recomendado para desenvolvimento)
+### Via Git Repository (recommended for development)
 
-1. Clone este repositório (ou copie a pasta do projeto).
-2. Crie um link simbólico na pasta de extensões do Ulauncher:
+1. Clone this repo (or copy the project's folder).
+2. Create a symlink in Ulauncher's `extensions` folder:
 
    ```bash
    mkdir -p ~/.local/share/ulauncher/extensions
-   ln -sf /caminho/absoluto/para/ulauncher_gitmoji_extension \
+   ln -sf /absolute/path/to/ulauncher_gitmoji_extension \
      ~/.local/share/ulauncher/extensions/ulauncher-gitmoji
    ```
 
-3. Reinicie o Ulauncher (ou recarregue as extensões nas preferências).
+3. Restart Ulauncher (or reload the Extensions in the Preferences).
 
-### Pela URL do GitHub (quando o repositório estiver público)
+### Via GitHub URL (for access to the public repository)
 
-1. Abra *Ulauncher → Preferências → Extensões → Adicionar extensão*.
-2. Cole a URL do repositório Git (HTTPS), por exemplo:  
-   `https://github.com/SEU_USUARIO/ulauncher_gitmoji_extension.git`
+1. Open *Ulauncher → Preferences → Extensions → Add extension*.
+2. Paste the repository's URL (HTTPS), for example:  
+   `https://github.com/YOUR_USERNAME/ulauncher_gitmoji_extension.git`
 
-O Ulauncher usa o arquivo [`versions.json`](versions.json) para escolher o branch compatível com a API (aqui: `master` + API `2`). Se o branch padrão do seu repositório for `main`, altere o campo `commit` em `versions.json` para `main`.
+Ulauncher uses the file [`versions.json`](versions.json) to choose which branch is compatible with the API (here: `main` + API `2`). If, for example, the default branch for your repository is `master`, change the `commit` field in `versions.json` to `master`.
 
-## Uso
+## Usage
 
-1. Abra o Ulauncher (atalho padrão).
-2. Digite a palavra-chave configurada (padrão: **`gm`**).
+1. Open Ulauncher (default shortcut).
+2. Type a the configured keyword (default: **`gm`**).
 
-| Comando | Comportamento |
+| Command | Behaviour |
 |---------|----------------|
-| **`gm `** (só a keyword, sem termo) | Mostra **5** gitmojis iniciais (sugestões rápidas). |
-| **`gm <termo>`** | Busca por código, nome ou descrição; até **25** resultados. Ex.: `gm bug`, `gm performance`. |
-| **`gm all`** | Lista **todos** os gitmojis (~73), sem limite. |
-| **`gm all <termo>`** | Filtra como na busca normal, mas **sem limite** de resultados. |
+| **`gm `** (keyword only, no search-terms) | Shows **5** initial gitmojis (quick suggestions). |
+| **`gm <search-term>`** | Searches by code, name or description; up to **25** results. E.g. `gm bug`, `gm performance`. |
+| **`gm all`** | Lists **all** gitmojis (~73), without limits. |
+| **`gm all <search-term>`** | Same as regular search, only **without limits** on the result hits. |
 
-3. Cada gitmoji aparece como **um único item** (emoji + código no título; descrição abaixo).
-4. **Enter** no item: copia o valor configurado em *Formato copiado* (código `:nome:` ou emoji unicode) e fecha o Ulauncher.
+3. Each gitmoji appears as **a single item** (emoji + code in the title; description below).
+4. Pressing **Enter** upon the item: copies the configured value as *Copied format* (code `:nome:` or emoji unicode) and closes Ulauncher.
 
-## Preferências
+## Preferences
 
-Em *Preferências → Extensões → Gitmoji*:
+Under *Preferences → Extensions → Gitmoji*:
 
-| Preferência | Descrição |
+| Preferece | Description |
 |-------------|-----------|
-| **Gitmoji** (keyword) | Palavra que dispara a extensão (padrão `gm`). |
-| **Formato copiado** | Define se o **Enter** copia o **código** (`:bug:`) ou o **emoji unicode** (`🐛`). |
+| **Gitmoji** (keyword) | Word that triggers the extension (default `gm`). |
+| **Copied format** | Defines if pressing **Enter** copies the **code** (`:bug:`) or the **emoji unicode** (`🐛`). |
 
-## Desenvolvimento e teste manual
+## Development and manual testing
 
-1. Instale a extensão via symlink (seção *Instalação*).
-2. Rode o Ulauncher em modo verboso para ver logs da extensão:
+1. Install the extension via symlink (see  *Installation* above).
+2. Run Ulauncher in verbose mode to see the extension logs:
 
    ```bash
    ulauncher -v
    ```
 
-3. Teste no launcher: `gm`, `gm bug`, `gm all`, `gm all fix`.
-4. Após selecionar um item, cole em um editor e confira se o texto copiado está correto (código vs emoji).
+3. Test in the launcher: `gm`, `gm bug`, `gm all`, `gm all fix`.
+4. After selecting an item, paste it on an editor andverify if the copied text is correct (code vs emoji).
 
-## Créditos
+## Credits
 
-- Inspiração: [techouse/alfred-gitmoji](https://github.com/techouse/alfred-gitmoji)
-- Dados e convenção gitmoji: [carloscuesta/gitmoji](https://github.com/carloscuesta/gitmoji)
-- Ícone: assets do site gitmoji ([`packages/website/public/static`](https://github.com/carloscuesta/gitmoji/tree/master/packages/website/public/static))
+- Inspiration: [techouse/alfred-gitmoji](https://github.com/techouse/alfred-gitmoji)
+- Data and gitmoji convention: [carloscuesta/gitmoji](https://github.com/carloscuesta/gitmoji)
+- Icon: assets from the gitmoji website ([`packages/website/public/static`](https://github.com/carloscuesta/gitmoji/tree/master/packages/website/public/static))
+- English translation [Duclearc](https://duclearc.com)
 
-## Licença
+## License
 
-MIT — veja [LICENSE](LICENSE).
+MIT — see [LICENSE](LICENSE).
