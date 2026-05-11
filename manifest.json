@@ -18,12 +18,12 @@
     {
       "id": "default_action",
       "type": "select",
-      "name": "Formato copiado",
-      "description": "O que colocar no clipboard ao selecionar um gitmoji",
+      "name": "Copied Format",
+      "description": "What to place on the clipboard upon selecting a gitmoji",
       "default_value": "code",
       "options": [
-        { "value": "code", "text": "Código (ex.: :bug:)" },
-        { "value": "emoji", "text": "Emoji unicode (ex.: 🐛)" }
+        { "value": "code", "text": "Code (e.g. :bug:)" },
+        { "value": "emoji", "text": "Emoji unicode (e.g. 🐛)" }
       ]
     }
   ]
